@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Панель администрирования</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="app">
+   <script>
+    window.host = "admin.istudentapp.ru";
+   </script>
+   <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                    <span class="sr-only">Открыть навигацию</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">StudCloud</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">
+                 <ul class="nav navbar-nav navbar-right "> 
+                     <li>
+                         <form class="navbar-form navbar-left" role="search">
+                             <div class="form-group">
+                                 <input type="text" class="form-control" placeholder="Search">
+                             </div>
+                         </form>
+                      </li>
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Настройки <b class="caret"></b></a>
+                          <ul class="dropdown-menu ">
+                              <li><a href="#">Пункт1</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Пункт2</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#" onclick="Auth.logout();">Выход</a></li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+       <div class="row">
+           <div class="navbar navbar-fixed-left col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <ul class="nav nav-pills nav-stacked">
+              <li><h4 class="text-primary">Просмотр данных</h4>
+                 <ul class="nav nav-tabs nav-stacked">
+                  <li><a href="#/universities">Университеты</a></li>
+                  <li><a href="#/subjects">Предметы</a></li>
+                  <li><a href="#/workTypes">Типы работ</a></li>
+                  </ul>
+              </li>
+              <li><h4 class="text-primary">Управление</h4>
+                 <ul class="nav nav-tabs nav-stacked">
+                  <li><a href="#">Редактирование данных</a></li>
+                  <li><a href="#">Статистика</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Обратная связь</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9" ng-view>
+            
+        </div>
+       </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="app.config.js"></script>
+    <script src="js/universities/universities.module.js"></script>
+    <script src="js/universities/universities.component.js"></script>
+    <!--<script src="js/controller.js"></script>-->
+  </body>
+</html>
